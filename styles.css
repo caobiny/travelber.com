@@ -26,7 +26,7 @@ img { display: block; width: 100%; }
 .site-header.scrolled { position: fixed; color: var(--ink); background: rgba(251,248,242,.94); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); padding-block: 14px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; width: max-content; font-size: 23px; font-weight: 600; letter-spacing: -.04em; }
 .brand-mark { display: grid; place-items: center; width: 31px; height: 31px; border: 1px solid currentColor; border-radius: 50%; font-family: var(--display); font-style: italic; font-weight: 400; }
-.desktop-nav { display: flex; gap: 32px; font-size: 14px; }
+.desktop-nav { display: flex; gap: 38px; font-size: 16px; font-weight: 500; line-height: 1.4; }
 .desktop-nav a { opacity: .84; }
 .desktop-nav a:hover { opacity: 1; }
 .header-actions { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
