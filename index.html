@@ -173,7 +173,7 @@
 
   <footer>
     <div class="footer-top"><a class="brand footer-brand" href="#home"><span class="brand-mark">T</span><span>Travelber</span></a><p>Independent inspiration for unhurried European escapes.</p><a href="#home">Back to top ↑</a></div>
-    <div class="footer-grid"><div><span>Explore</span><a href="#resorts">Resorts</a><a href="#collections">Collections</a><a href="#guides">Field guides</a></div><div><span>Plan</span><a href="#matcher">Trip matcher</a><a href="#saved" id="footerSaved">Saved places</a><a href="#guides">When to go</a></div><div><span>About</span><a href="#about">Our approach</a><a href="#about">Editorial policy</a><a href="mailto:hello@travelber.com">Contact</a></div></div>
+    <div class="footer-grid"><div><span>Explore</span><a href="#resorts">Resorts</a><a href="#collections">Collections</a><a href="#guides">Field guides</a></div><div><span>Plan</span><a href="#matcher">Trip matcher</a><a href="#saved" id="footerSaved">Saved places</a><a href="#guides">When to go</a></div><div><span>About</span><a href="#about">Our approach</a><a href="#about">Editorial policy</a><a href="mailto:admin@travelber.com">admin@travelber.com</a></div><div><span>Legal</span><button class="footer-link" type="button" data-legal="privacy">Privacy policy</button><button class="footer-link" type="button" data-legal="cookies">Cookie policy</button><button class="footer-link" type="button" id="openCookieSettings">Cookie settings</button></div></div>
     <div class="footer-bottom"><span>© 2026 Travelber</span><p>Planning profiles are editorial starting points. Always confirm current details directly before booking.</p><span>Real destination photography via <a href="https://unsplash.com/?utm_source=travelber&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a> &amp; <a href="https://www.pexels.com/" target="_blank" rel="noopener">Pexels</a></span></div>
   </footer>
 
@@ -181,6 +181,19 @@
   <aside class="drawer saved-drawer" id="savedDrawer" aria-hidden="true"><div class="drawer-heading"><div><p class="eyebrow">Your shortlist</p><h2>Saved places</h2></div><button class="drawer-close" data-close>Close ×</button></div><div id="savedList"></div></aside>
   <div class="search-overlay" id="searchOverlay" aria-hidden="true"><button class="drawer-close" data-close>Close ×</button><div class="search-panel"><p class="eyebrow light">Search Travelber</p><label><span>⌕</span><input id="globalSearch" type="search" placeholder="Search places, collections and guides"></label><div id="globalResults"></div></div></div>
   <div class="detail-modal" id="detailModal" aria-hidden="true"><button class="detail-close" data-close aria-label="Close details">×</button><article id="detailContent"></article></div>
+  <section class="cookie-banner" id="cookieBanner" aria-label="Cookie notice" hidden>
+    <div><p class="eyebrow">Your privacy</p><h2>Cookies, your choice.</h2><p>Travelber uses essential browser storage for saved places and your privacy choices. Optional analytics and marketing technologies stay off unless you allow them.</p><button class="text-button" type="button" data-legal="cookies">Read our cookie policy</button></div>
+    <div class="cookie-actions"><button class="button-secondary" type="button" id="rejectCookies">Reject optional</button><button class="button-secondary" type="button" id="customizeCookies">Manage choices</button><button class="button-primary" type="button" id="acceptCookies">Accept all</button></div>
+  </section>
+  <div class="cookie-modal" id="cookieModal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle" aria-hidden="true">
+    <div class="cookie-panel"><button class="cookie-close" type="button" data-cookie-close aria-label="Close cookie settings">×</button><p class="eyebrow">Privacy preferences</p><h2 id="cookieModalTitle">Choose what you allow</h2><p class="cookie-summary">Essential storage is always active because it powers saved places and remembers this choice. Optional categories can be changed at any time.</p>
+      <div class="cookie-choice"><div><strong>Essential</strong><p>Required for core site functions and your privacy preference.</p></div><label class="switch"><input type="checkbox" checked disabled><span></span><b>Always on</b></label></div>
+      <div class="cookie-choice"><div><strong>Analytics</strong><p>Would help us understand site usage. No analytics service is currently connected.</p></div><label class="switch"><input type="checkbox" id="analyticsConsent"><span></span><b>Allow</b></label></div>
+      <div class="cookie-choice"><div><strong>Marketing</strong><p>Would support relevant advertising. No advertising tracker is currently connected.</p></div><label class="switch"><input type="checkbox" id="marketingConsent"><span></span><b>Allow</b></label></div>
+      <div class="cookie-panel-actions"><button class="button-secondary" type="button" id="rejectCookiesModal">Reject optional</button><button class="button-primary" type="button" id="saveCookieChoices">Save choices</button></div>
+    </div>
+  </div>
+  <div class="legal-modal" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalTitle" aria-hidden="true"><article class="legal-panel"><button class="cookie-close" type="button" data-legal-close aria-label="Close policy">×</button><div id="legalContent"></div></article></div>
   <div class="backdrop" id="backdrop"></div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 

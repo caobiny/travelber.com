@@ -185,6 +185,59 @@
     toastTimer = setTimeout(() => el.classList.remove("show"), 2400);
   }
 
+  const COOKIE_PREFERENCES_KEY = "travelber_cookie_preferences_v1";
+  const legalPolicies = {
+    privacy: `<p class="eyebrow">Travelber legal</p><h2 id="legalTitle">Privacy policy</h2><p class="legal-updated">Last updated 17 October 2026</p><p>Travelber is an independent travel inspiration website. This policy explains what information is handled when you use the site.</p><h3>Information you choose to provide</h3><p>If you email us at <a href="mailto:admin@travelber.com">admin@travelber.com</a>, your email provider will transmit the information you include so we can respond. The newsletter form in this current preview does not transmit or retain an email address.</p><h3>Browser-local information</h3><p>Saved places and privacy preferences are stored locally in your browser. They are not sent to Travelber by this website. You can remove them by clearing this site's browser data.</p><h3>Analytics and advertising</h3><p>No analytics or advertising service is currently connected. If one is introduced later, optional tracking will remain disabled unless you consent through Cookie settings.</p><h3>Photography and external links</h3><p>The site links to external services such as Unsplash and Pexels. Their own privacy policies apply after you follow those links.</p><h3>Contact</h3><p>For privacy questions or requests, contact <a href="mailto:admin@travelber.com">admin@travelber.com</a>.</p>`,
+    cookies: `<p class="eyebrow">Travelber legal</p><h2 id="legalTitle">Cookie policy</h2><p class="legal-updated">Last updated 17 October 2026</p><p>Travelber currently uses browser local storage rather than tracking cookies. We use the term “Cookie settings” as a familiar way to manage all browser-storage preferences.</p><h3>Essential storage</h3><p><strong>travelber_cookie_preferences_v1</strong> remembers whether you allowed optional analytics or marketing. Saved-place information is also kept locally so your shortlist remains available on this device. Essential storage cannot be switched off through this panel because it records your choice and supports requested features.</p><h3>Optional analytics</h3><p>Analytics is currently not connected. Selecting “Allow” records your preference only; it does not load an analytics service.</p><h3>Optional marketing</h3><p>Advertising and marketing trackers are currently not connected. Selecting “Allow” records your preference only; it does not load advertising technology.</p><h3>Change or withdraw consent</h3><p>Choose “Cookie settings” in the footer at any time. You can reject optional categories, save new choices, or clear this site's browser data to remove stored preferences.</p><h3>Contact</h3><p>Questions about this policy can be sent to <a href="mailto:admin@travelber.com">admin@travelber.com</a>.</p>`
+  };
+
+  function readCookiePreferences() {
+    try { return JSON.parse(localStorage.getItem(COOKIE_PREFERENCES_KEY)); } catch { return null; }
+  }
+
+  function setModalScroll() {
+    const hasOpenModal = $("#cookieModal").classList.contains("open") || $("#legalModal").classList.contains("open");
+    document.body.classList.toggle("no-scroll", hasOpenModal);
+  }
+
+  function closeCookieModal() {
+    $("#cookieModal").classList.remove("open");
+    $("#cookieModal").setAttribute("aria-hidden", "true");
+    setModalScroll();
+  }
+
+  function openCookieModal() {
+    const saved = readCookiePreferences() || {};
+    $("#analyticsConsent").checked = Boolean(saved.analytics);
+    $("#marketingConsent").checked = Boolean(saved.marketing);
+    $("#cookieModal").classList.add("open");
+    $("#cookieModal").setAttribute("aria-hidden", "false");
+    setModalScroll();
+    setTimeout(() => $("#analyticsConsent").focus(), 20);
+  }
+
+  function saveCookiePreferences(analytics, marketing) {
+    const preferences = { necessary: true, analytics: Boolean(analytics), marketing: Boolean(marketing), updatedAt: new Date().toISOString() };
+    try { localStorage.setItem(COOKIE_PREFERENCES_KEY, JSON.stringify(preferences)); } catch {}
+    $("#cookieBanner").hidden = true;
+    closeCookieModal();
+    toast("Your privacy choices have been saved");
+  }
+
+  function openLegalPolicy(type) {
+    $("#legalContent").innerHTML = legalPolicies[type] || legalPolicies.privacy;
+    $("#legalModal").classList.add("open");
+    $("#legalModal").setAttribute("aria-hidden", "false");
+    setModalScroll();
+    setTimeout(() => $("#legalModal .cookie-close").focus(), 20);
+  }
+
+  function closeLegalPolicy() {
+    $("#legalModal").classList.remove("open");
+    $("#legalModal").setAttribute("aria-hidden", "true");
+    setModalScroll();
+  }
+
   function populateFilters() {
     const append = (selector, values) => values.forEach(v => $(selector).insertAdjacentHTML("beforeend",`<option value="${esc(v)}">${esc(v)}</option>`));
     append("#regionFilter", [...new Set(resorts.map(r => r.country))].sort());
@@ -208,6 +261,8 @@
   }
 
   document.addEventListener("click", event => {
+    const legal = event.target.closest("[data-legal]");
+    if (legal) { event.preventDefault(); openLegalPolicy(legal.dataset.legal); return; }
     const favorite = event.target.closest("[data-favorite]");
     if (favorite) { event.preventDefault(); event.stopPropagation(); toggleFavorite(favorite.dataset.favorite); return; }
     for (const kind of ["resort","collection","guide"]) {
@@ -230,8 +285,18 @@
   $("#menuButton").addEventListener("click", () => openLayer("#mobileMenu"));
   $("#openSearch").addEventListener("click", () => { openLayer("#searchOverlay"); renderGlobalResults(); setTimeout(()=>$("#globalSearch").focus(),200); });
   $("#globalSearch").addEventListener("input", e => renderGlobalResults(e.target.value));
+  $("#acceptCookies").addEventListener("click", () => saveCookiePreferences(true, true));
+  $("#rejectCookies").addEventListener("click", () => saveCookiePreferences(false, false));
+  $("#rejectCookiesModal").addEventListener("click", () => saveCookiePreferences(false, false));
+  $("#customizeCookies").addEventListener("click", openCookieModal);
+  $("#openCookieSettings").addEventListener("click", openCookieModal);
+  $("#saveCookieChoices").addEventListener("click", () => saveCookiePreferences($("#analyticsConsent").checked, $("#marketingConsent").checked));
+  $$('[data-cookie-close]').forEach(button => button.addEventListener("click", closeCookieModal));
+  $$('[data-legal-close]').forEach(button => button.addEventListener("click", closeLegalPolicy));
+  $("#cookieModal").addEventListener("click", e => { if (e.target === e.currentTarget) closeCookieModal(); });
+  $("#legalModal").addEventListener("click", e => { if (e.target === e.currentTarget) closeLegalPolicy(); });
   $("#backdrop").addEventListener("click", () => closeLayers(true));
-  document.addEventListener("keydown", e => { if(e.key === "Escape") closeLayers(true); if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openLayer("#searchOverlay");setTimeout(()=>$("#globalSearch").focus(),200);} });
+  document.addEventListener("keydown", e => { if(e.key === "Escape") { closeLayers(true); closeCookieModal(); closeLegalPolicy(); } if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openLayer("#searchOverlay");setTimeout(()=>$("#globalSearch").focus(),200);} });
   window.addEventListener("scroll", () => $("#siteHeader").classList.toggle("scrolled", scrollY > 80));
   window.addEventListener("popstate", () => { closeLayers(false); routeFromHash(); });
 
@@ -254,4 +319,5 @@
   renderGuides();
   updateSaved();
   routeFromHash();
+  $("#cookieBanner").hidden = Boolean(readCookiePreferences());
 })();
