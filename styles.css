@@ -90,7 +90,7 @@ h2 { margin: 0; font: 400 clamp(48px, 5.5vw, 82px)/.96 var(--display); letter-sp
 .favorite.active { color: var(--rust); background: white; border-color: white; }
 
 .mood-strip { display: grid; grid-template-columns: .9fr 1.1fr; min-height: 610px; margin-top: 90px; color: white; background: var(--green); }
-.mood-copy { display: flex; flex-direction: column; justify-content: flex-end; padding: 7vw; background: linear-gradient(rgba(15,47,37,.08), rgba(12,33,26,.48)), url("assets/travelber-hero.png") center/cover; }
+.mood-copy { display: flex; flex-direction: column; justify-content: flex-end; padding: 7vw; background: linear-gradient(rgba(15,47,37,.08), rgba(12,33,26,.48)), url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1800&q=84") center/cover; }
 .mood-copy h2 { max-width: 400px; font-size: clamp(64px, 7vw, 104px); }
 .mood-links { display: flex; flex-direction: column; justify-content: center; padding: 70px 7vw; }
 .mood-links button { display: grid; grid-template-columns: 40px 1fr auto; align-items: center; padding: 24px 0; border: 0; border-bottom: 1px solid rgba(255,255,255,.16); color: white; background: none; text-align: left; cursor: pointer; font: 38px var(--display); }
@@ -134,7 +134,7 @@ h2 { margin: 0; font: 400 clamp(48px, 5.5vw, 82px)/.96 var(--display); letter-sp
 .collection-card p { margin: 0; color: #aeb8b1; font-size: 11px; line-height: 1.6; }
 
 .matcher-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 760px; }
-.matcher-visual { position: relative; display: flex; align-items: end; padding: 5vw; color: white; background: linear-gradient(rgba(12,32,25,.12),rgba(12,32,25,.72)), url("assets/travelber-hero.png") 12% center/cover; }
+.matcher-visual { position: relative; display: flex; align-items: end; padding: 5vw; color: white; background: linear-gradient(rgba(12,32,25,.12),rgba(12,32,25,.72)), url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=84") 12% center/cover; }
 .matcher-badge { position: absolute; top: 42px; left: 42px; padding: 10px 14px; border: 1px solid rgba(255,255,255,.45); border-radius: 20px; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
 .matcher-visual blockquote { max-width: 520px; margin: 0; font: 50px/1.05 var(--display); }
 .matcher-card { padding: 8vw; color: white; background: var(--rust); }
@@ -151,7 +151,7 @@ h2 { margin: 0; font: 400 clamp(48px, 5.5vw, 82px)/.96 var(--display); letter-sp
 
 .guides-section { padding-top: 135px; }
 .guide-feature { display: grid; grid-template-columns: 1.15fr .85fr; min-height: 450px; margin-bottom: 15px; background: var(--sand); }
-.guide-feature-image { background: linear-gradient(rgba(18,46,36,.15),rgba(18,46,36,.3)), url("assets/travelber-hero.png") left center/cover; }
+.guide-feature-image { background: linear-gradient(rgba(18,46,36,.15),rgba(18,46,36,.3)), url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1800&q=84") left center/cover; }
 .guide-feature-copy { display: flex; flex-direction: column; justify-content: center; padding: 6vw; }
 .guide-feature-copy span, .guide-card span { color: #66736b; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
 .guide-feature-copy h3 { margin: 20px 0; font: 48px/1.05 var(--display); }

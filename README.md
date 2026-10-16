@@ -19,6 +19,6 @@ Serve the repository root with any static HTTP server and open `index.html`. The
 
 The first-release profiles are planning-oriented editorial summaries, not live inventory. Current availability, facilities, opening dates and booking terms should be verified directly before travel.
 
-## Image generation
+## Photography
 
-The hero image was created with OpenAI ImageGen using a photorealistic natural-travel brief: a cinematic European mountain-lake retreat at dawn, architecture and landscape only, with refined editorial lighting and no text or logos.
+The site uses real destination photography served by Unsplash. No AI-generated imagery is referenced by the website.
