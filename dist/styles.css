@@ -39,7 +39,7 @@ img { display: block; width: 100%; }
 .menu-button { display: none; height: 42px; padding: 0 14px; border-radius: 22px; }
 
 .hero { position: relative; min-height: 790px; height: min(92vh, 920px); color: white; overflow: hidden; }
-.hero > img { position: absolute; inset: 0; height: 100%; object-fit: cover; object-position: center; animation: heroIn 1.4s ease both; }
+.hero > img { position: absolute; inset: 0; height: 100%; object-fit: cover; object-position: center; filter: saturate(1.18) brightness(1.07) contrast(1.02); animation: heroIn 1.4s ease both; }
 @keyframes heroIn { from { transform: scale(1.04); opacity: .7; } }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,31,42,.58) 0%, rgba(5,31,42,.28) 46%, rgba(5,31,42,.03) 78%), linear-gradient(0deg, rgba(5,24,32,.25), transparent 50%); }
 .hero-content { position: absolute; left: 7vw; bottom: 11%; max-width: 860px; }
