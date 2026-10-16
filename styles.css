@@ -305,3 +305,7 @@ footer { padding: 70px 6vw 25px; color: #ccd3cf; background: #111b17; }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; animation: none !important; transition-duration: .01ms !important; }
 }
+/* Readability: enlarge the labels beneath the homepage proof numbers by 50%. */
+.proof-row span {
+  font-size: 16.5px;
+}
