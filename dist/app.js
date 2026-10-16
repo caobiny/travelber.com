@@ -13,6 +13,30 @@
   };
   const typeLabels = { Alpine:"Mountain", Coast:"Coast & island", Wellness:"Wellness & lake", Countryside:"Country", Nordic:"Wild north" };
   const fallbackImage = window.TRAVELBER.imagePool[0];
+  const typeAliases = {
+    Alpine: "mountain mountains alpine ski skiing snow hiking trail 高山 山区 山地 滑雪 雪山 徒步",
+    Coast: "sea seaside coast coastal beach beaches island islands swimming mediterranean ocean 海 海边 海滨 海岛 沙滩 岛屿 地中海",
+    Wellness: "wellness spa lake lakes thermal retreat relax restorative 温泉 水疗 湖 湖区 康养 放松 疗愈",
+    Countryside: "country countryside rural vineyard wine village food farm 乡村 田园 葡萄酒 酒庄 村庄 美食",
+    Nordic: "nordic north arctic aurora northern lights wilderness cabin 北欧 极光 北极 荒野 木屋"
+  };
+  const countryAliases = {
+    Austria:"奥地利", Croatia:"克罗地亚", Estonia:"爱沙尼亚", Finland:"芬兰", France:"法国", Germany:"德国", Greece:"希腊", Hungary:"匈牙利", Iceland:"冰岛", Ireland:"爱尔兰", Italy:"意大利", Latvia:"拉脱维亚", Montenegro:"黑山", Norway:"挪威", Poland:"波兰", Portugal:"葡萄牙", Romania:"罗马尼亚", Slovenia:"斯洛文尼亚", Spain:"西班牙", Sweden:"瑞典", Switzerland:"瑞士", "United Kingdom":"英国"
+  };
+
+  function normalized(value) {
+    return String(value || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[’']/g, "'").replace(/\s+/g, " ").trim();
+  }
+
+  function matchesQuery(text, query) {
+    const terms = normalized(query).split(" ").filter(Boolean);
+    const haystack = normalized(text);
+    return !terms.length || terms.every(term => haystack.includes(term));
+  }
+
+  function resortSearchText(resort) {
+    return [resort.name, resort.country, countryAliases[resort.country], resort.region, resort.type, typeLabels[resort.type], typeAliases[resort.type], resort.bestFor, resort.dek, resort.seasons.join(" "), resort.highlights.join(" ")].join(" ");
+  }
 
   function imageTag(item, alt, className = "") {
     return `<img class="${className}" src="${esc(item.image || fallbackImage)}" alt="${esc(alt)}" style="object-position:${esc(item.position || "center")}" loading="lazy" onerror="this.onerror=null;this.src='${fallbackImage}'">`;
@@ -56,10 +80,9 @@
 
   function filteredResorts() {
     const f = state.filters;
-    const q = f.query.trim().toLowerCase();
+    const q = f.query.trim();
     return resorts.filter(r => {
-      const searchable = `${r.name} ${r.country} ${r.region} ${r.type} ${r.bestFor}`.toLowerCase();
-      return (!q || searchable.includes(q)) && (f.region === "all" || r.country === f.region) && (f.type === "all" || r.type === f.type) && (f.season === "all" || r.seasons.includes(f.season)) && (f.budget === "all" || r.budget === f.budget);
+      return matchesQuery(resortSearchText(r), q) && (f.region === "all" || r.country === f.region) && (f.type === "all" || r.type === f.type) && (f.season === "all" || r.seasons.includes(f.season)) && (f.budget === "all" || r.budget === f.budget);
     });
   }
 
@@ -74,7 +97,7 @@
   function renderResorts() {
     const list = filteredResorts();
     $("#resultCount").textContent = `${list.length} ${list.length === 1 ? "place" : "places"}`;
-    $("#resortGrid").innerHTML = list.slice(0,state.visibleResorts).map(resortCard).join("") || `<div class="empty-state">No places match those filters. Try clearing one.</div>`;
+    $("#resortGrid").innerHTML = list.slice(0,state.visibleResorts).map(resortCard).join("") || `<div class="empty-state"><p>No places found for “${esc(state.filters.query)}”.</p><span>Try a country, region, season, or words such as sea, mountains, spa and countryside.</span></div>`;
     $("#loadMore").hidden = list.length <= state.visibleResorts;
   }
 
@@ -98,14 +121,14 @@
   }
 
   function renderGlobalResults(query = "") {
-    const q = query.trim().toLowerCase();
+    const q = query.trim();
     const matches = [];
     if (q.length > 1) {
-      resorts.filter(r => `${r.name} ${r.country} ${r.region} ${r.type}`.toLowerCase().includes(q)).slice(0,4).forEach(item => matches.push({type:"Resort", title:item.name, slug:item.slug, action:"resort"}));
-      collections.filter(c => `${c.title} ${c.group}`.toLowerCase().includes(q)).slice(0,3).forEach(item => matches.push({type:"Collection", title:item.title, slug:item.slug, action:"collection"}));
-      guides.filter(g => `${g.title} ${g.category}`.toLowerCase().includes(q)).slice(0,3).forEach(item => matches.push({type:"Guide", title:item.title, slug:item.slug, action:"guide"}));
+      resorts.filter(r => matchesQuery(resortSearchText(r), q)).slice(0,4).forEach(item => matches.push({type:"Resort", title:item.name, slug:item.slug, action:"resort"}));
+      collections.filter(c => matchesQuery(`${c.title} ${c.group} ${c.tag} ${typeAliases[c.tag] || ""}`, q)).slice(0,3).forEach(item => matches.push({type:"Collection", title:item.title, slug:item.slug, action:"collection"}));
+      guides.filter(g => matchesQuery(`${g.title} ${g.category} ${g.dek} travel planning guide 旅行 指南 攻略`, q)).slice(0,3).forEach(item => matches.push({type:"Guide", title:item.title, slug:item.slug, action:"guide"}));
     }
-    $("#globalResults").innerHTML = matches.length ? matches.map(m => `<article class="search-result" data-open-${m.action}="${m.slug}"><span>${m.type}</span><h3>${esc(m.title)}</h3></article>`).join("") : q.length > 1 ? `<div class="empty-state">No result yet. Try a country, landscape or season.</div>` : `<div class="empty-state">Try “Italy”, “winter” or “island”.</div>`;
+    $("#globalResults").innerHTML = matches.length ? matches.map(m => `<article class="search-result" data-open-${m.action}="${m.slug}"><span>${m.type}</span><h3>${esc(m.title)}</h3></article>`).join("") : q.length > 1 ? `<div class="empty-state"><p>No results for “${esc(q)}”.</p><span>Try a country, season, or mood such as sea, mountains, spa or countryside.</span></div>` : `<div class="empty-state">Try “Italy”, “sea”, “winter” or “海岛”.</div>`;
   }
 
   function resortDetail(r) {

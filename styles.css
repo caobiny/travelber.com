@@ -206,6 +206,9 @@ footer { padding: 70px 6vw 25px; color: #ccd3cf; background: #111b17; }
 .search-result { padding: 18px; border: 1px solid rgba(255,255,255,.16); cursor: pointer; }
 .search-result span { color: #aebdb4; font-size: 9px; text-transform: uppercase; }
 .search-result h3 { margin: 22px 0 0; font: 24px var(--display); }
+.search-overlay .empty-state { grid-column: 1 / -1; color: rgba(255,255,255,.72); }
+.search-overlay .empty-state p { margin: 0 0 8px; color: white; font: 30px var(--display); }
+.search-overlay .empty-state span { font-size: 12px; }
 .detail-modal { position: fixed; z-index: 80; inset: 0; visibility: hidden; overflow-y: auto; background: var(--cream); opacity: 0; transform: translateY(18px); transition: .3s ease; }
 .detail-modal.open { visibility: visible; opacity: 1; transform: none; }
 .detail-close { position: fixed; z-index: 3; top: 22px; right: 28px; display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid rgba(255,255,255,.6); border-radius: 50%; color: white; background: rgba(12,28,22,.3); backdrop-filter: blur(10px); cursor: pointer; font-size: 28px; }
