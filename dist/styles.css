@@ -26,7 +26,7 @@ img { display: block; width: 100%; }
 .site-header.scrolled { position: fixed; color: var(--ink); background: rgba(251,248,242,.94); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); padding-block: 14px; }
 .brand { display: inline-flex; align-items: center; gap: 16px; width: max-content; font-size: 46px; font-weight: 600; line-height: 1; letter-spacing: -.04em; }
 .brand-mark { display: grid; place-items: center; width: 62px; height: 62px; border: 1px solid currentColor; border-radius: 50%; font-family: var(--display); font-size: 36px; font-style: italic; font-weight: 400; }
-.desktop-nav { display: flex; justify-content: center; gap: 38px; font-size: 32px; font-weight: 500; line-height: 1.2; }
+.desktop-nav { display: flex; justify-content: center; gap: 38px; font-size: 25.6px; font-weight: 500; line-height: 1.2; }
 .desktop-nav a { opacity: .84; white-space: nowrap; }
 .desktop-nav a:hover { opacity: 1; }
 .header-actions { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
@@ -41,7 +41,7 @@ img { display: block; width: 100%; }
 .hero { position: relative; min-height: 790px; height: min(92vh, 920px); color: white; overflow: hidden; }
 .hero > img { position: absolute; inset: 0; height: 100%; object-fit: cover; object-position: center; animation: heroIn 1.4s ease both; }
 @keyframes heroIn { from { transform: scale(1.04); opacity: .7; } }
-.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,25,20,.72) 0%, rgba(8,25,20,.34) 46%, rgba(8,25,20,.04) 76%), linear-gradient(0deg, rgba(7,20,16,.38), transparent 45%); }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,31,42,.58) 0%, rgba(5,31,42,.28) 46%, rgba(5,31,42,.03) 78%), linear-gradient(0deg, rgba(5,24,32,.25), transparent 50%); }
 .hero-content { position: absolute; left: 7vw; bottom: 11%; max-width: 860px; }
 .eyebrow { margin: 0 0 18px; color: var(--green); font-size: 12px; font-weight: 600; line-height: 1.4; letter-spacing: .18em; text-transform: uppercase; }
 .eyebrow.light { color: rgba(255,255,255,.72); }
