@@ -22,3 +22,5 @@ The first-release profiles are planning-oriented editorial summaries, not live i
 ## Photography
 
 The site uses real destination photography served by Unsplash. No AI-generated imagery is referenced by the website.
+
+Cloudflare Pages automatic deployment test - 2026-10-17
