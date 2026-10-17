@@ -84,7 +84,7 @@
       slug: slugify(name),
       name, country, region, type, seasons,
       budget: ["€€","€€€","€€€€", "€€€"][i % 4],
-      image: `https://picsum.photos/seed/travelber-${slugify(name)}-${i + 1}/1200/800`,
+      image: uniqueImageUrl(i < places.length ? imagePool[i % imagePool.length] : firstBatchImages[(i - places.length) % firstBatchImages.length], i),
       position: `${28 + (i*13)%54}% center`,
       dek: moodLine[type],
       bestFor: bestFor[type][i % 4],
