@@ -39,7 +39,8 @@
   }
 
   function imageTag(item, alt, className = "") {
-    return `<img class="${className}" src="${esc(item.image || fallbackImage)}" alt="${esc(alt)}" style="object-position:${esc(item.position || "center")}" loading="lazy" onerror="this.onerror=null;this.src='${fallbackImage}'">`;
+    const recovery = item.imageSource ? "this.onerror=null;this.style.visibility='hidden'" : `this.onerror=null;this.src='${fallbackImage}'`;
+    return `<img class="${className}" src="${esc(item.image || fallbackImage)}" alt="${esc(item.imageAlt || alt)}" style="object-position:${esc(item.position || "center")}" loading="lazy" onerror="${recovery}">`;
   }
 
   function favoriteButton(resort) {

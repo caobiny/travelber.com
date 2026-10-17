@@ -76,6 +76,12 @@
     return list.slice(0, index + 1).filter(item => item[1] === country).length <= countryQuotas[country];
   });
   const uniqueImageUrl = (base, index) => `${base}&crop=entropy&fp-x=${((index * 37) % 100) / 100}&fp-y=${((index * 61) % 100) / 100}&fit=crop&sig=${index + 1}`;
+  // Photos checked against each property's official website; no random image endpoints.
+  const propertyPhotos = {
+    "Hotel de Blanke Top": { image: "assets/resorts/blanke-top.jpg", imageAlt: "Hotel de Blanke Top above the dunes at Cadzand", imageSource: "https://www.blanketop.com/en/hotel", position: "42% center" },
+    "Hotel Texel": { image: "assets/resorts/hotel-texel.jpg", imageAlt: "A bright guest-room relaxation scene at Boutique Hotel Texel", imageSource: "https://www.hoteltexel.com/", position: "65% center" },
+    "Strandhotel Cadzand": { image: "assets/resorts/strandhotel.webp", imageAlt: "Sunlit suite at Strandhotel Cadzand", imageSource: "https://strandhotel.eu/", position: "center" }
+  };
   const resorts = allPlaces.map((p, i) => {
     const [name,country,region,type] = p;
     const seasons = seasonsByType[type];
@@ -86,6 +92,7 @@
       budget: ["€€","€€€","€€€€", "€€€"][i % 4],
       image: uniqueImageUrl(i < places.length ? imagePool[i % imagePool.length] : firstBatchImages[(i - places.length) % firstBatchImages.length], i),
       position: `${28 + (i*13)%54}% center`,
+      ...propertyPhotos[name],
       dek: moodLine[type],
       bestFor: bestFor[type][i % 4],
       days: 3 + (i % 5),
