@@ -14,6 +14,16 @@
     ["Baden-Baden","Germany","Black Forest","Wellness"],["Tegernsee","Germany","Bavaria","Wellness"],["Sylt","Germany","North Sea","Coast"],["Berchtesgaden","Germany","Bavaria","Alpine"],["South Tyrol","Italy","Alto Adige","Wellness"],["Provence","France","Southern France","Countryside"],["Alentejo","Portugal","Southern Portugal","Countryside"],["Transylvania","Romania","Carpathians","Countryside"],["Zakopane","Poland","Tatra Mountains","Alpine"],["Lake Balaton","Hungary","Transdanubia","Wellness"],["Jūrmala","Latvia","Baltic Coast","Coast"],["Saaremaa","Estonia","Baltic Sea","Nordic"]
   ];
 
+  const firstBatch = [
+    ["Obergurgl","Austria","Tyrol","Alpine"],["Schladming","Austria","Styria","Alpine"],["St. Anton am Arlberg","Austria","Tyrol","Alpine"],["Wachau Valley","Austria","Lower Austria","Countryside"],["Bad Ischl","Austria","Salzkammergut","Wellness"],["Lake Wörthersee","Austria","Carinthia","Wellness"],["Bregenzerwald","Austria","Vorarlberg","Countryside"],
+    ["Morzine","France","Haute-Savoie","Alpine"],["Les Gets","France","Haute-Savoie","Alpine"],["La Clusaz","France","Haute-Savoie","Alpine"],["La Baule","France","Loire-Atlantique","Coast"],["Hossegor","France","Landes","Coast"],["Saint-Jean-de-Luz","France","Basque Coast","Coast"],["Dordogne","France","Nouvelle-Aquitaine","Countryside"],["Vichy","France","Auvergne","Wellness"],
+    ["Garmisch-Partenkirchen","Germany","Bavaria","Alpine"],["Oberstdorf","Germany","Bavaria","Alpine"],["Winterberg","Germany","North Rhine-Westphalia","Alpine"],["Usedom","Germany","Baltic Coast","Coast"],["Rügen","Germany","Baltic Sea","Coast"],["Moselle Valley","Germany","Rhineland-Palatinate","Countryside"],["Wiesbaden","Germany","Hesse","Wellness"],
+    ["Hemsedal","Norway","Buskerud","Nordic"],["Trysil","Norway","Innlandet","Nordic"],["Sognefjord","Norway","Vestland","Nordic"],["Geirangerfjord","Norway","Møre og Romsdal","Nordic"],["Kvitfjell","Norway","Innlandet","Alpine"],["Farris Bad","Norway","Vestfold","Wellness"],["Hvaler","Norway","Østfold","Coast"],
+    ["Bath","United Kingdom","Somerset","Wellness"],["North Norfolk","United Kingdom","Norfolk","Coast"],["St Ives","United Kingdom","Cornwall","Coast"],["Yorkshire Dales","United Kingdom","Yorkshire","Countryside"],["Brecon Beacons","United Kingdom","Wales","Countryside"],["Cairngorms","United Kingdom","Scotland","Alpine"],["Torridon","United Kingdom","Highlands","Nordic"],
+    ["Texel","Netherlands","Wadden Islands","Coast"],["Zeeland Coast","Netherlands","Zeeland","Coast"],["Veluwe","Netherlands","Gelderland","Countryside"],["Giethoorn","Netherlands","Overijssel","Countryside"],["Valkenburg","Netherlands","Limburg","Wellness"],["Amsterdamse Bos","Netherlands","North Holland","Wellness"],
+    ["Spa","Belgium","Liège","Wellness"],["Ardennes","Belgium","Wallonia","Countryside"],["Knokke-Heist","Belgium","West Flanders","Coast"],["De Haan","Belgium","Belgian Coast","Coast"],["Hautes Fagnes","Belgium","East Cantons","Nordic"],["Durbuy","Belgium","Luxembourg Province","Countryside"],["La Roche-en-Ardenne","Belgium","Ardennes","Alpine"],["Nieuwpoort","Belgium","West Flanders","Coast"],["Malmedy","Belgium","Ardennes","Countryside"],["Bastogne","Belgium","Luxembourg Province","Alpine"]
+  ];
+
   const imagePool = [
     "https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1200&q=82",
     "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=82",
@@ -25,6 +35,13 @@
     "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1200&q=82",
     "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=82",
     "https://images.unsplash.com/photo-1443632864897-14973fa006cf?auto=format&fit=crop&w=1200&q=82"
+  ];
+
+  const firstBatchImages = [
+    "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1483347756197-71ef80e95f73?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1520962922320-2038eebab146?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1517825738774-7de9363ef735?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1486911278844-a81c5267e227?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=82",
+    "https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1443632864897-14973fa006cf?auto=format&fit=crop&w=1200&q=82",
+    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=82&sat=18","https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1200&q=82&sat=18","https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=82&sat=18","https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=82&sat=18","https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=82&sat=18","https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=82&sat=18","https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1200&q=82&sat=18","https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=82&sat=18","https://images.unsplash.com/photo-1443632864897-14973fa006cf?auto=format&fit=crop&w=1200&q=82&sat=18","https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=82&sat=18",
+    "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=82&hue=12","https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1200&q=82&hue=12","https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=82&hue=12","https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1200&q=82&hue=12","https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=82&hue=12","https://images.unsplash.com/photo-1483347756197-71ef80e95f73?auto=format&fit=crop&w=1200&q=82&hue=12","https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1200&q=82&hue=12","https://images.unsplash.com/photo-1520962922320-2038eebab146?auto=format&fit=crop&w=1200&q=82&hue=12","https://images.unsplash.com/photo-1517825738774-7de9363ef735?auto=format&fit=crop&w=1200&q=82&hue=12","https://images.unsplash.com/photo-1486911278844-a81c5267e227?auto=format&fit=crop&w=1200&q=82&hue=12","https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1494783367193-149034c05e8f?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1482192505345-5655af888cc4?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1519817650390-64a93db511aa?auto=format&fit=crop&w=1200&q=82","https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=1200&q=82"
   ];
 
   const seasonsByType = { Alpine:["Winter","Summer"], Coast:["Summer","Spring"], Wellness:["Autumn","Spring"], Countryside:["Spring","Autumn"], Nordic:["Winter","Summer"] };
@@ -44,7 +61,8 @@
   };
   const slugify = value => value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[’']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
-  const resorts = places.map((p, i) => {
+  const allPlaces = places.concat(firstBatch);
+  const resorts = allPlaces.map((p, i) => {
     const [name,country,region,type] = p;
     const seasons = seasonsByType[type];
     return {
@@ -52,7 +70,7 @@
       slug: slugify(name),
       name, country, region, type, seasons,
       budget: ["€€","€€€","€€€€", "€€€"][i % 4],
-      image: imagePool[i % imagePool.length],
+      image: i < places.length ? imagePool[i % imagePool.length] : firstBatchImages[(i - places.length) % firstBatchImages.length],
       position: `${28 + (i*13)%54}% center`,
       dek: moodLine[type],
       bestFor: bestFor[type][i % 4],
