@@ -1,0 +1,17 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Dependencies and local tooling
+node_modules/
+.DS_Store
+Thumbs.db
+.codex/
+.agents/
