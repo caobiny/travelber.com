@@ -240,7 +240,11 @@
 
   function populateFilters() {
     const append = (selector, values) => values.forEach(v => $(selector).insertAdjacentHTML("beforeend",`<option value="${esc(v)}">${esc(v)}</option>`));
-    append("#regionFilter", [...new Set(resorts.map(r => r.country))].sort());
+    // Keep the country filter focused on destinations with published entries.
+    // Netherlands and Belgium can be added automatically once their resort data exists.
+    const preferredCountries = ["Austria", "France", "Germany", "Norway", "United Kingdom", "Netherlands", "Belgium"];
+    const availableCountries = new Set(resorts.map(r => r.country));
+    append("#regionFilter", preferredCountries.filter(country => availableCountries.has(country)));
     append("#typeFilter", [...new Set(resorts.map(r => r.type))].map(t => t));
     append("#seasonFilter", ["Spring","Summer","Autumn","Winter"]);
   }
