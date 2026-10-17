@@ -75,6 +75,7 @@
     if (!countryQuotas[country]) return false;
     return list.slice(0, index + 1).filter(item => item[1] === country).length <= countryQuotas[country];
   });
+  const uniqueImageUrl = (base, index) => `${base}&crop=entropy&fp-x=${((index * 37) % 100) / 100}&fp-y=${((index * 61) % 100) / 100}&fit=crop&sig=${index + 1}`;
   const resorts = allPlaces.map((p, i) => {
     const [name,country,region,type] = p;
     const seasons = seasonsByType[type];
@@ -83,7 +84,7 @@
       slug: slugify(name),
       name, country, region, type, seasons,
       budget: ["€€","€€€","€€€€", "€€€"][i % 4],
-      image: i < places.length ? imagePool[i % imagePool.length] : firstBatchImages[(i - places.length) % firstBatchImages.length],
+      image: uniqueImageUrl(i < places.length ? imagePool[i % imagePool.length] : firstBatchImages[(i - places.length) % firstBatchImages.length], i),
       position: `${28 + (i*13)%54}% center`,
       dek: moodLine[type],
       bestFor: bestFor[type][i % 4],
