@@ -10,6 +10,69 @@
       "download": "https://images.pexels.com/photos/31283499/pexels-photo-31283499.jpeg?auto=compress&cs=tinysrgb&w=1800&q=85"
     },
     {
+      "file": "city-rotterdam.jpg",
+      "photographer": "Lajos Kristóf Kántor",
+      "source": "https://www.pexels.com/photo/modern-skyline-and-maritime-activity-in-rotterdam-39994187/",
+      "subject": "Rotterdam harbour skyline",
+      "download": "https://images.pexels.com/photos/39994187/pexels-photo-39994187.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+    },
+    {
+      "file": "city-the-hague.jpg",
+      "photographer": "Jan van der Wolf",
+      "source": "https://www.pexels.com/photo/scenic-view-of-scheveningen-beach-in-the-hague-32508092/",
+      "subject": "Scheveningen beach, The Hague",
+      "download": "https://images.pexels.com/photos/32508092/pexels-photo-32508092.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+    },
+    {
+      "file": "city-utrecht.jpg",
+      "photographer": "Martijn Stoof",
+      "source": "https://www.pexels.com/photo/picturesque-canal-scene-in-utrecht-netherlands-32348122/",
+      "subject": "Utrecht canal",
+      "download": "https://images.pexels.com/photos/32348122/pexels-photo-32348122.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+    },
+    {
+      "file": "city-haarlem.jpg",
+      "photographer": "Hans Heemsbergen",
+      "source": "https://www.pexels.com/photo/scenic-canal-view-in-haarlem-netherlands-33500682/",
+      "subject": "Haarlem canal",
+      "download": "https://images.pexels.com/photos/33500682/pexels-photo-33500682.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+    },
+    {
+      "file": "city-delft.jpg",
+      "photographer": "Petra Nesti",
+      "source": "https://www.pexels.com/photo/scenic-canal-view-in-delft-with-church-32130173/",
+      "subject": "Delft canal and church",
+      "download": "https://images.pexels.com/photos/32130173/pexels-photo-32130173.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+    },
+    {
+      "file": "city-leiden.jpg",
+      "photographer": "Jan van der Wolf",
+      "source": "https://www.pexels.com/photo/32275820/",
+      "subject": "Leiden canal",
+      "download": "https://images.pexels.com/photos/32275820/pexels-photo-32275820.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+    },
+    {
+      "file": "city-maastricht.jpg",
+      "photographer": "Chris Oberman",
+      "source": "https://www.pexels.com/photo/scenic-view-of-maastricht-s-historic-riverside-33353927/",
+      "subject": "Maastricht historic riverside",
+      "download": "https://images.pexels.com/photos/33353927/pexels-photo-33353927.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+    },
+    {
+      "file": "city-groningen.jpg",
+      "photographer": "Daan Rink",
+      "source": "https://www.pexels.com/photo/street-lamp-on-building-wall-2784385/",
+      "subject": "Groningen city architecture",
+      "download": "https://images.pexels.com/photos/2784385/pexels-photo-2784385.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+    },
+    {
+      "file": "city-eindhoven.jpg",
+      "photographer": "Mahmood Alhussein",
+      "source": "https://www.pexels.com/photo/eindhoven-cityscape-featuring-iconic-blob-building-34002112/",
+      "subject": "Eindhoven city centre",
+      "download": "https://images.pexels.com/photos/34002112/pexels-photo-34002112.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+    },
+    {
       "file": "dutch-windmill.jpg",
       "photographer": "Freek Wolsink",
       "source": "https://www.pexels.com/photo/traditional-dutch-windmill-under-blue-skies-36052894/",
