@@ -19,6 +19,6 @@ links++;
 assert(!h.includes('source.unsplash')&&!h.includes('picsum.photos'));
 if(!p.noindex)assert(fs.readFileSync('dist/sitemap.xml','utf8').includes('https://travelber.com'+p.url+'</loc>'));
 }
-assert.equal(pages.length,9);assert(!fs.existsSync('dist/data.js'),'Old site data remains');
+assert.equal(pages.length,10);assert(!fs.existsSync('dist/data.js'),'Old site data remains');
 console.log('PASS: '+pages.length+' pages, '+links+' local links/anchors, unique metadata, single H1, JSON-LD, canonical URLs, sitemap and retired content.');
 
