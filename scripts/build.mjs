@@ -9,7 +9,7 @@ const nlCities='<section class="section"><div class="section-heading"><div><p cl
 const links=[['Destinations','/destinations/'],['Weekend breaks','/guides/'],['Travel tips','/travel-tips/netherlands-public-transport/'],['About','/about/']];
 for(const p of data){
  p.body=p.body.replace(/src="\/assets\/(amsterdam-canal|dutch-windmill)\.jpg"/g,(_,name)=>'src="/assets/'+name+'.jpg" srcset="/assets/'+name+'-small.jpg 720w, /assets/'+name+'.jpg '+(name==='amsterdam-canal'?1800:1200)+'w" sizes="(max-width: 700px) calc(100vw - 36px), (max-width: 1050px) 50vw, 700px"');
- if(p.url==='/destinations/netherlands/'){const at=p.body.lastIndexOf('</div>');p.body=p.body.slice(0,at)+nlCities+p.body.slice(at);}
+ if(p.url==='/destinations/netherlands/'){const start=p.body.indexOf('<section class="section"><div class="section-heading"><div><p class="eyebrow">PLAN IN THE RIGHT ORDER');const end=p.body.indexOf('</section>',start)+10;if(start>=0&&end>start)p.body=p.body.slice(0,start)+nlCities+p.body.slice(end);}
  const url=base+p.url;
  const schema=[{'@context':'https://schema.org','@type':'Organization','@id':base+'/#organization',name:'Travelber',url:base,email:'admin@travelber.com'}];
  if(p.url==='/')schema.push({'@context':'https://schema.org','@type':'WebSite',name:'Travelber',url:base,inLanguage:'en'});
