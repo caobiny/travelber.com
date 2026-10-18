@@ -1,26 +1,10 @@
 # Travelber
 
-An editorial, English-language discovery site for European resort destinations.
+Old website content removed at the owner's request on 2026-10-18.
+The current website is a temporary English reconstruction notice.
 
-## Included
+Deployment: GitHub caobiny/travelber.com, branch main; Cloudflare Pages travelber-com, output dist.
+Root index.html and robots.txt are mirrored in dist. Remove noindex when the new site is ready.
 
-- 100 structured resort profiles
-- 50 editorial collections
-- 50 practical travel guides
-- Search, multi-dimensional filters and local saved places
-- Resort, collection and guide detail routes
-- Responsive trip matcher and mobile navigation
-
-## Local preview
-
-Serve the repository root with any static HTTP server and open `index.html`. The production package is mirrored in `dist/`.
-
-## Editorial note
-
-The first-release profiles are planning-oriented editorial summaries, not live inventory. Current availability, facilities, opening dates and booking terms should be verified directly before travel.
-
-## Photography
-
-The site uses real destination photography served by Unsplash. No AI-generated imagery is referenced by the website.
-
-Cloudflare Pages automatic deployment test - 2026-10-17
+Recovery: Git commit 990cf0e0318105f3231f52b24b5cd7774676b4ad and local ignored .codex/backups.
+Do not publish backups or credentials.
