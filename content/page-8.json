@@ -1,0 +1,7 @@
+{
+  "url": "/404.html",
+  "title": "Page Not Found",
+  "description": "This Travelber page is no longer available. Browse our new guides.",
+  "body": "<div class=\"wrap narrow page-intro\"><p class=\"eyebrow\">A SMALL DETOUR / 404</p><h1>This path ends here.</h1><p class=\"lead\">We’ve rebuilt Travelber. This page may have moved or been retired.</p><a class=\"button\" href=\"/guides/\">Explore the new guides ↗</a></div>",
+  "noindex": true
+}

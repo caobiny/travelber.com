@@ -1,0 +1,20 @@
+{
+  "checked": "2026-10-18",
+  "license": "https://www.pexels.com/license/",
+  "photos": [
+    {
+      "file": "amsterdam-canal.jpg",
+      "photographer": "Martijn Stoof",
+      "source": "https://www.pexels.com/photo/scenic-amsterdam-canal-bridge-on-a-sunny-day-31283499/",
+      "subject": "Amsterdam canal",
+      "download": "https://images.pexels.com/photos/31283499/pexels-photo-31283499.jpeg?auto=compress&cs=tinysrgb&w=1800&q=85"
+    },
+    {
+      "file": "dutch-windmill.jpg",
+      "photographer": "Freek Wolsink",
+      "source": "https://www.pexels.com/photo/traditional-dutch-windmill-under-blue-skies-36052894/",
+      "subject": "Dutch countryside, not a claimed Amsterdam itinerary stop",
+      "download": "https://images.pexels.com/photos/36052894/pexels-photo-36052894.jpeg?auto=compress&cs=tinysrgb&w=1200&q=85"
+    }
+  ]
+}
