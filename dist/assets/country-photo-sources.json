@@ -1,0 +1,12 @@
+{
+ "license":"https://www.pexels.com/license/",
+ "checked":"2026-10-19",
+ "photos":[
+  {"country":"france","id":34773151,"file":"country-france.jpg","alt":"Eiffel Tower and fountains in Paris","source":"https://www.pexels.com/photo/eiffel-tower-in-paris-on-a-sunny-day-34773151/"},
+  {"country":"united-kingdom","id":30624820,"file":"country-united-kingdom.jpg","alt":"Big Ben and the Palace of Westminster in London","source":"https://www.pexels.com/photo/iconic-view-of-big-ben-and-westminster-palace-30624820/"},
+  {"country":"belgium","id":32110847,"file":"country-belgium.jpg","alt":"Historic facades of Grand-Place in Brussels","source":"https://www.pexels.com/photo/vibrant-grand-place-brussels-with-crowds-32110847/"},
+  {"country":"norway","id":18170373,"file":"country-norway.jpg","alt":"Oslo Opera House beside the waterfront","source":"https://www.pexels.com/photo/oslo-opera-house-18170373/"},
+  {"country":"austria","id":35714900,"file":"country-austria.jpg","alt":"Belvedere Palace gardens and Vienna cityscape","source":"https://www.pexels.com/photo/vienna-belvedere-palace-gardens-with-cityscape-35714900/"},
+  {"country":"switzerland","id":32347937,"file":"country-switzerland.jpg","alt":"Historic waterfront buildings beside the Limmat in Zurich","source":"https://www.pexels.com/photo/scenic-view-of-zurich-s-historic-waterfront-32347937/"}
+ ]
+}

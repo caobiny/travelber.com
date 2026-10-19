@@ -1,0 +1,4 @@
+.country-hero-art{min-height:390px;border-radius:100px 3px 3px 3px;background:#e8edcf;padding:65px 36px 40px;display:flex;flex-direction:column;justify-content:center;border:1px solid #b9c79d}
+.country-hero-art strong{font-family:Georgia,serif;font-weight:400;font-size:clamp(38px,4.5vw,66px);line-height:1.12;letter-spacing:-.04em;overflow-wrap:anywhere;margin-bottom:24px}
+.country-hero-art p{color:var(--muted)}.country-hero-art .text-link{align-self:flex-start}
+@media(max-width:700px){.country-hero-art{min-height:280px;padding:45px 28px 30px}.toc a{white-space:normal}.text-link{white-space:normal}}
