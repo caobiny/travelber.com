@@ -54,7 +54,8 @@ for(const p of data){
  const photo=base+(p.image||(p.country?'/assets/favicon.svg':'/assets/amsterdam-canal.jpg'));
  const html='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(p.title)+' | Travelber</title><meta name="description" content="'+esc(p.description)+'"><meta name="robots" content="'+(p.noindex?'noindex,follow':'index,follow,max-image-preview:large')+'"><link rel="canonical" href="'+url+'"><meta name="theme-color" content="#153a43"><meta property="og:site_name" content="Travelber"><meta property="og:type" content="'+(p.article?'article':'website')+'"><meta property="og:title" content="'+esc(p.title)+'"><meta property="og:description" content="'+esc(p.description)+'"><meta property="og:url" content="'+url+'"><meta property="og:image" content="'+photo+'"><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"><link rel="stylesheet" href="/assets/site.css"><link rel="stylesheet" href="/assets/dropdown-fix.css"><script defer src="/assets/site.js"></script><script type="application/ld+json">'+JSON.stringify(schema).replaceAll('<','\\u003c')+'</script></head><body id="top">'+header+'<main id="main">'+p.body+'</main>'+footer+'</body></html>';
  const file=path.join('dist',p.url.endsWith('.html')?p.url.slice(1):p.url.slice(1)+'index.html');
- fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,html);
+ const verifiedHtml=p.url==='/'?html.replace('</head>','<meta name="google-site-verification" content="akOzoDHyYkGGNhqN_YnEteKTjPF0gdQy9IPp6CXBRik" /></head>'):html;
+ fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,verifiedHtml);
 }
 fs.cpSync('assets','dist/assets',{recursive:true});
 fs.writeFileSync('dist/robots.txt','User-agent: *\nAllow: /\nSitemap: '+base+'/sitemap.xml\n');
